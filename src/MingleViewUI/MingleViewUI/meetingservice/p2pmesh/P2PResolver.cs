@@ -1,0 +1,135 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ServiceModel.PeerResolvers;
+using System.ServiceModel;
+using System.ServiceModel.Description;
+using System.Net;
+using MingleView.Properties;
+using MingleView;
+using System.Collections.ObjectModel;
+using System.Security.Cryptography.X509Certificates;
+namespace p2p.mesh
+{
+    class IPv6OnlyResolverService : CustomPeerResolverService
+    {
+        public override RegisterResponseInfo Register(RegisterInfo info)
+       {
+           List<IPAddress> globalIpv6list = new List<IPAddress>();
+
+           foreach (IPAddress ipv6address in info.NodeAddress.IPAddresses)
+           {
+               //take only ipv6 address
+               if (ipv6address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+                {
+                    globalIpv6list.Add(ipv6address);  
+                }
+           }
+           ReadOnlyCollection<IPAddress> ipv6Collection = new ReadOnlyCollection<IPAddress>(globalIpv6list);
+           PeerNodeAddress nodeAddress = new PeerNodeAddress(
+                                    new EndpointAddress(info.NodeAddress.EndpointAddress.Uri),
+                                    ipv6Collection);
+           RegisterInfo ipv6OnlyRegInfo = new RegisterInfo(info.ClientId, info.MeshId, nodeAddress);
+
+           RegisterResponseInfo response = base.Register(ipv6OnlyRegInfo);
+           return response;
+       }
+    }
+
+    class P2PResolver
+    {
+        //service names
+        private const string RESOLVER_RELATIVE_PATH = "MingleView/peerResolverService";
+        private const int RESOLVER_LISTENING_START_PORT = 5757;
+        private ServiceHost _resolverHost = null; 
+        public  string ResolverURI { get;  private set ; }//contains global uri
+        public string LoopBackURI { get; private set; }//restricted to local m/c
+  
+        /****************************
+        * helper to initalise the custom resolver.
+        * returns success or failure
+         * throws mingleview exception
+        * ****************************/
+        public bool Start(string sBindIPv6Address)
+        {
+            // Create a new resolver service
+            CustomPeerResolverService custompnrpResolver = new IPv6OnlyResolverService();//CustomPeerResolverService();
+            string sResolverUniqueID = Guid.NewGuid().ToString();
+            string sResolverPath;
+
+            Logger.Trace(Logger.MessageType.Informational, "P2PResolver::Start "); 
+            int iListeningPort = findNextAvailableIPv6Port(RESOLVER_LISTENING_START_PORT);
+
+            //listen in all ipv6 addresses  
+            sResolverPath = "/" + sResolverUniqueID + "/" + RESOLVER_RELATIVE_PATH;
+            ResolverURI = "net.tcp://" + "[" + sBindIPv6Address + "]" + ":" + iListeningPort + sResolverPath;
+            LoopBackURI = "net.tcp://" + "[::1]:" + iListeningPort + sResolverPath;
+            
+            Uri resolverbaseAddress = new Uri("net.tcp://[::]:" + iListeningPort + sResolverPath);
+            _resolverHost = new ServiceHost(custompnrpResolver, resolverbaseAddress);
+            NetTcpBinding customresolverBinding = new NetTcpBinding();
+            customresolverBinding.Security.Mode = SecurityMode.None;
+            
+            ServiceEndpoint Endpoint = _resolverHost.AddServiceEndpoint(typeof(IPeerResolverContract), customresolverBinding, resolverbaseAddress);
+            // Open the resolver service 
+            custompnrpResolver.ControlShape = false;
+            custompnrpResolver.Open();
+            try
+            {
+                _resolverHost.Open();
+            }
+            catch (CommunicationObjectFaultedException ce)
+            {
+                Logger.Trace(Logger.MessageType.Failure, "P2PResolver::Start " + ce.Message + "." + ce.InnerException.Message);
+                ResolverURI = null;
+                throw new MingleViewException(Strings.P2PResolver_Host_OpenErrorMesg + ce.Message + "." + ce.InnerException.Message); 
+            }
+            Logger.Trace(Logger.MessageType.Informational, "P2PResolver::Start:ResolverURI " + ResolverURI); 
+              return true;
+        }
+        public void Stop()
+        {
+            if (_resolverHost!=null)
+            {
+                _resolverHost.Close();
+                _resolverHost = null;
+            }
+        }
+        /// <summary>
+        /// Check if startPort is available, incrementing and
+        /// checking again if it's in use until a free port is found
+        /// </summary>
+        /// <param name="startPort">The first port to check</param>
+        /// <returns>The first available port</returns>
+        private int findNextAvailableIPv6Port(int iStartPort)
+        {
+            int iPort = iStartPort;
+            bool isAvailable = true;
+
+
+            do
+            {
+                var tcpListener = new System.Net.Sockets.TcpListener(IPAddress.Parse("[::]"), iPort);
+
+                try
+                {
+                    isAvailable = true;
+                    tcpListener.Start();
+                }
+                catch (System.Net.Sockets.SocketException)
+                {
+                    isAvailable = false;
+                }
+                finally
+                {
+                    tcpListener.Stop();
+                }
+                if(isAvailable==false)iPort++;
+            } while (!isAvailable && iPort < IPEndPoint.MaxPort);
+
+            return iPort;
+        }
+
+    }
+}

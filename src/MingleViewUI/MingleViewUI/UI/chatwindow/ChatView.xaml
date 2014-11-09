@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MingleView.UI.View.ChatView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:MingleView.Model"
+    xmlns:view="clr-namespace:MingleView.UI.View"
+
+    Height="Auto" Width="Auto">
+
+    <Grid>
+        <Grid.Resources>
+            <vm:ParticipantNameConverter x:Key="participantNameConverter"/>
+            <vm:MessageDateTimeConverter x:Key="messageDateTimeConverter"/>
+            <DataTemplate x:Key="chatMsgCollectionTemplate">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Source, Converter={StaticResource participantNameConverter}}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Path=Text}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding Path=UtcCreatedTime, Converter={StaticResource messageDateTimeConverter}}" Foreground="Gray"/>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+        <ListBox Margin="0,5,0,66" ItemsSource="{Binding ChatMsgCollection}" ItemTemplate="{DynamicResource chatMsgCollectionTemplate}" BorderBrush="DarkGray" BorderThickness="2" IsSynchronizedWithCurrentItem="True" view:ListBoxAutoScroll.IsAutoscroll="True">
+            <ListBox.Template>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Grid>
+                        <Image HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Source="CHAT.jpg"
+                       Stretch="Fill"/>
+                        <ScrollViewer Padding="{TemplateBinding Padding}"
+                              Focusable="false">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </ListBox.Template>
+        </ListBox>
+        <TextBox Height="50" Margin="10,0,109,12" Name="txtChatMsg" VerticalAlignment="Bottom" BorderBrush="SteelBlue" BorderThickness="2" Text= "{Binding Path= ChatMsg, UpdateSourceTrigger=PropertyChanged}" HorizontalScrollBarVisibility="Auto"  PreviewKeyDown="txtChatMsg_PreviewKeyDown" />
+        <Button Content="Send" Height="28" HorizontalAlignment="Right" Margin="0,0,16,22" x:Name="btnChatSendMsg" VerticalAlignment="Bottom" Width="78" IsDefault="True" Command="{Binding ChatSendCmd}"/>
+    </Grid>
+</UserControl>

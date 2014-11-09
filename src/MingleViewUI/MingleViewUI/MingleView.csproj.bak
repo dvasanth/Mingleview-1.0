@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51A68EC2-E43F-4EC8-AEBA-DB67FD7BB2DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MingleView</RootNamespace>
+    <AssemblyName>MingleView</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>UI\MainWindow\MingleView.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonDock, Version=1.3.3585.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AvalonDock\AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.RDPCOMAPILib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AvalonDock\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="UI\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="UI\About\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\chatwindow\ChatView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\JoinMeeting\JoinMeetingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\MainWindow\MainWindowResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ParticipantView\ParticipantView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\QuickLaunch\QuickLaunchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\QuickstartMeeting\QuickStartMeeting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\RemoteScreen\RemoteScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Send Error Report\SendErrorReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Shared\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Shared\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="UI\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoUpdater.cs" />
+    <Compile Include="UI\About\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ErrorReporting.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MeetingService\p2pmesh\Firewall.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Header.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordA6.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordAPL.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordATMA.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordCERT.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordDHCID.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordDNSKEY.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordEID.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordGID.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordGPOS.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordHIP.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordIPSECKEY.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordMD.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordMF.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNIMLOC.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNSAPPTR.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNSEC.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNSEC3.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNSEC3PARAM.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordNXT.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordOPT.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordRRSIG.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordSINK.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordSPF.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordSSHFP.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordUID.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordUINFO.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordUnknown.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\obsolete\RecordUNSPEC.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Question.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\RecordReader.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\Record.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordA.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordAAAA.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordAFSDB.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordCNAME.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordDNAME.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordDS.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordHINFO.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordISDN.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordKEY.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordKX.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordLOC.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordMB.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordMG.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordMINFO.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordMR.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordMX.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordNAPTR.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordNS.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordNSAP.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordNULL.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordPTR.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordPX.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordRP.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordRT.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordSIG.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordSOA.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordSRV.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordTKEY.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordTSIG.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordTXT.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordWKS.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\records\RecordX25.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Request.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Resolver.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Response.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\RR.cs" />
+    <Compile Include="MeetingService\p2pmesh\ipv4dns\Structs.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PDNShlpr.cs" />
+    <Compile Include="Model\AppInfo.cs" />
+    <Compile Include="Model\ChatMessage.cs" />
+    <Compile Include="MeetingService\EventArgs.cs" />
+    <Compile Include="Model\Host.cs" />
+    <Compile Include="MeetingService\interfaces\IMeetingManager.cs" />
+    <Compile Include="MeetingService\interfaces\IMeetingEvents.cs" />
+    <Compile Include="MeetingService\interfaces\IMeshMeeting.cs" />
+    <Compile Include="MeetingService\MeetingService.cs" />
+    <Compile Include="MingleViewException.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PMeshInfo.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PDNS.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PMesh.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PMessagePropagationFilter.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PNative.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PResolver.cs" />
+    <Compile Include="MeetingService\p2pmesh\P2PsecureID.cs" />
+    <Compile Include="Model\Participant.cs" />
+    <Compile Include="MeetingService\PeerRecordSync.cs" />
+    <Compile Include="Model\Presenter.cs" />
+    <Compile Include="Model\RDInvitation.cs" />
+    <Compile Include="SelfInstaller.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\chatwindow\ChatView.xaml.cs">
+      <DependentUpon>ChatView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JoinMeeting\JoinMeetingView.xaml.cs">
+      <DependentUpon>JoinMeetingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MenuItem.cs" />
+    <Compile Include="Model\ChatModel.cs" />
+    <Compile Include="UI\MessageBoxService\IMessageBoxService.cs" />
+    <Compile Include="UI\MessageBoxService\MessageBoxService .cs" />
+    <Compile Include="UI\ProgressWindow\ProgressIndicator.cs" />
+    <Compile Include="UI\QuickstartMeeting\QuickStartMeeting.xaml.cs">
+      <DependentUpon>QuickStartMeeting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RemoteScreen\RemoteScreenView.xaml.cs">
+      <DependentUpon>RemoteScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Send Error Report\SendErrorReport.xaml.cs">
+      <DependentUpon>SendErrorReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UIEventArgs.cs" />
+    <Compile Include="UI\ViewModel\ChatViewModel.cs" />
+    <Compile Include="UI\ViewModel\CommandViewModel.cs" />
+    <Compile Include="UI\ViewModel\JoinMeetingViewModel.cs" />
+    <Compile Include="UI\ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="UI\ViewModel\MeetingWorkspaceViewModel.cs" />
+    <Compile Include="UI\ParticipantView\ParticipantView.xaml.cs">
+      <DependentUpon>ParticipantView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\QuickLaunch\QuickLaunchView.xaml.cs">
+      <DependentUpon>QuickLaunchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewModel\ParticipantViewModel.cs" />
+    <Compile Include="UI\ViewModel\QuickLaunchViewModel.cs" />
+    <Compile Include="UI\RelayCommand.cs" />
+    <Compile Include="UI\ViewModel\QuickStartMeetingViewModel.cs" />
+    <Compile Include="UI\ViewModel\RemoteScreenViewModel.cs" />
+    <Compile Include="UI\ViewModel\SendErrorReportViewModel.cs" />
+    <Compile Include="UI\ViewModel\ViewModelBase.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MeetingService\p2pmesh\ipv4dns\records\totla.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NetFwTypeLib">
+      <Guid>{58FBCF7C-E7A9-467C-80B3-FC65E8FCCA08}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="RDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\chatwindow\CHAT.jpg" />
+    <Resource Include="UI\chatwindow\SEND.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\ParticipantView\Participant.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\ParticipantView\Presenter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dependency\AvalonDock.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dependency\AxInterop.RDPCOMAPILib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dependency\Interop.NetFwTypeLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dependency\Interop.RDPCOMAPILib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\MainWindow\MingleView.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\MainWindow\connected.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\MainWindow\crowsoft.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\MainWindow\close.png" />
+    <Resource Include="UI\MainWindow\maximize.png" />
+    <Resource Include="UI\MainWindow\minimize.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

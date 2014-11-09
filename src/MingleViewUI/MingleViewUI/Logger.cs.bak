@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace MingleView
+{
+    static class  Logger
+    {
+        private const string FILE_NAME = "tracelog.txt";  
+        private const int MAX_FILE_SIZE = 1024*250;
+        static FileStream _fileStream = null;
+        static StreamWriter _streamWriter = null;
+        public static string FileLocation{get; private set;}
+          /// <value>Available message severities</value>
+        public enum MessageType
+        {
+            /// <value>Informational message</value>
+            Informational = 1,
+            /// <value>Failure audit message</value>
+            Failure = 2,
+            /// <value>Warning message</value>
+            Warning = 3,
+            /// <value>Error message</value>
+            Error = 4
+        }
+
+        static Logger()
+        {
+            string sLogDirectory;
+            
+            sLogDirectory=Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
+                         "\\crowsoft\\mingleview\\log\\" ;
+            FileLocation = sLogDirectory+ FILE_NAME;
+            //open the stream
+            try{
+                Directory.CreateDirectory(sLogDirectory);  
+                _fileStream = new FileStream(FileLocation , FileMode.OpenOrCreate,
+                      FileAccess.Write);
+                _streamWriter = new StreamWriter(_fileStream);  
+            }
+            catch
+            {
+                if(_fileStream!= null)
+                    _fileStream.Close();
+                _fileStream=null;
+                if(_streamWriter!=null)
+                    _streamWriter.Close(); 
+                _streamWriter=null;
+            }
+        }
+           /// <summary>
+       /// Log a message.
+       /// </summary>
+       /// <param name="Message">Message to log. </param>
+       /// <param name="Severity">Error severity level. </param>
+       static public  void Trace(MessageType Severity,string sLog)
+       {
+
+         StringBuilder message = new StringBuilder();
+
+
+         System.Diagnostics.Trace.Write(sLog);
+           if(_fileStream==null || _streamWriter==null)
+               return ;
+         try
+         {
+
+          //go back to beginning if file greater than max file size
+          if (_streamWriter.BaseStream.Length > MAX_FILE_SIZE)
+          {
+              _streamWriter.BaseStream.SetLength(0);
+          }
+          // Set the file pointer to the end of the file
+          _streamWriter.BaseStream.Seek(0, SeekOrigin.End); 
+     
+          // Create the message
+          message.Append(Severity.ToString()).
+              Append(": " + System.DateTime.Now.ToString()).
+              Append(",").
+              Append(sLog);
+
+          // Force the write to the underlying file
+          _streamWriter.WriteLine(message.ToString());
+          _streamWriter.Flush();
+ 
+         }
+         catch
+         {
+              if(_fileStream!= null)
+                    _fileStream.Close();
+                if(_streamWriter!=null)
+                    _streamWriter.Close(); 
+               _fileStream= null;
+               _streamWriter=null;
+
+         }//catch
+       }//trace()
+      }
+}

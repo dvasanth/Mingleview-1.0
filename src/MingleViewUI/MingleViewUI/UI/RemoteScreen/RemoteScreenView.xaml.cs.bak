@@ -1,0 +1,164 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using MingleView.UI.ViewModel;
+using System.ComponentModel;
+using AxRDPCOMAPILib;
+using MingleView.Model;
+namespace MingleView.UI.View
+{
+    /// <summary>
+    /// Interaction logic for RemoteScreenView.xaml
+    /// </summary>
+    public partial class RemoteScreenView : UserControl
+    {
+        private AxRDPCOMAPILib.AxRDPViewer _axRdpViewer;
+        // Create the interop host control.
+        System.Windows.Forms.Integration.WindowsFormsHost _axFormHost = null;
+        private bool _bScaleAxRDPScreen = false;    //initially activex is not scaled
+        public RemoteScreenView()
+        {
+            InitializeComponent();
+            btnRemoteScreen.Content = "Request Control";
+
+            _axFormHost = new System.Windows.Forms.Integration.WindowsFormsHost();
+            // Create the ActiveX control.
+            _axRdpViewer = new AxRDPCOMAPILib.AxRDPViewer();
+
+            // Assign the ActiveX control as the host control's child.
+            _axFormHost.Child = _axRdpViewer;
+            // Add the interop host control to the Grid
+            // control's collection of child controls.
+            this.gridRDPHolder.Children.Add(_axFormHost);
+
+            this.DataContextChanged+=new DependencyPropertyChangedEventHandler(RemoteScreenView_DataContextChanged);
+        }
+   
+     void RemoteScreenView_DataContextChanged( object sender, DependencyPropertyChangedEventArgs e )
+      {
+          //monitor the property changes in the view model
+          if (this.DataContext != null)
+              (this.DataContext as RemoteScreenViewModel).PropertyChanged += PropertyChangedEventHandler;
+   
+      }
+
+
+        private void gridRDPHolder_Initialized(object sender, EventArgs e)
+        {
+         
+          
+          }
+        private void gridRDPHolder_Loaded(object sender, RoutedEventArgs e)
+        {
+       
+      
+        }
+        /****************
+         * *****************/
+        private void OnConnectionEstablished(object sender, EventArgs e)
+        {
+ 
+           
+        }
+        /***********
+         * error so exists
+         * ********/
+        private void OnError(object sender, _IRDPSessionEvents_OnErrorEvent e)
+        {
+            //disable request control
+            
+        }
+        /****************
+         * connection got terminated
+         * *************/
+        private void OnConnectionTerminated(object sender, _IRDPSessionEvents_OnConnectionTerminatedEvent e)
+        {
+           //disable request control
+        }
+        /*****************
+         * ***************/
+        private void OnConnectionFailed(object sender, EventArgs e)
+        {
+            //diable request control
+        }
+        /***************
+         * RequestControl method works only after attendee connected
+         * ****************/
+        void _axRdpViewer_OnAttendeeConnected(object sender, AxRDPCOMAPILib._IRDPSessionEvents_OnAttendeeConnectedEvent e)
+        {
+            RDPCOMAPILib.IRDPSRAPIAttendee pAttendee = e.pAttendee as RDPCOMAPILib.IRDPSRAPIAttendee;
+            if (pAttendee.RemoteName == (this.DataContext as RemoteScreenViewModel).RDAttendeeName)
+            {
+                //request only for our connection event
+                _axRdpViewer.RequestControl(RDPCOMAPILib.CTRL_LEVEL.CTRL_LEVEL_VIEW);
+                _axRdpViewer.RequestColorDepthChange(16);
+                ((System.Windows.Interop.IKeyboardInputSink)_axFormHost).TabInto(new System.Windows.Input.TraversalRequest(FocusNavigationDirection.First));
+            }
+        }
+        /**************
+         * rdp properties change notification
+         * (**************/
+        void PropertyChangedEventHandler(Object sender,PropertyChangedEventArgs e)
+        {
+            //invitaion update
+            if (e.PropertyName == "ScreenInvitation")
+            {
+                RDInvitation invitation = (this.DataContext as RemoteScreenViewModel).ScreenInvitation;
+
+                if (invitation != null)
+                {
+
+                    //register for activex events
+                    this._axRdpViewer.OnError += this.OnError;
+                    this._axRdpViewer.OnConnectionFailed += this.OnConnectionFailed;
+                    this._axRdpViewer.OnConnectionTerminated += this.OnConnectionTerminated;
+                    this._axRdpViewer.OnConnectionEstablished += this.OnConnectionEstablished;
+                    this._axRdpViewer.OnAttendeeConnected += new AxRDPCOMAPILib._IRDPSessionEvents_OnAttendeeConnectedEventHandler(_axRdpViewer_OnAttendeeConnected);
+    
+                    _axRdpViewer.Connect(invitation.ConnectionString,
+                                           (this.DataContext as RemoteScreenViewModel).RDAttendeeName,
+                                            invitation.Password);  
+                }
+            }
+
+            //requesting
+            if (e.PropertyName == "RDPRequest")
+            {
+                RemoteScreenViewModel.ScreenRequest  req = (this.DataContext as RemoteScreenViewModel).RDPRequest;
+
+                if (req == RemoteScreenViewModel.ScreenRequest.AskControl)
+                {
+                    
+                    _axRdpViewer.RequestControl(RDPCOMAPILib.CTRL_LEVEL.CTRL_LEVEL_INTERACTIVE);
+                    (this.DataContext as RemoteScreenViewModel).RDPRequest = RemoteScreenViewModel.ScreenRequest.AskNone;
+                    ((System.Windows.Interop.IKeyboardInputSink)_axFormHost).TabInto(new System.Windows.Input.TraversalRequest(FocusNavigationDirection.First));
+                    btnRemoteScreen.Content = "Release Control";
+                }
+                if (req == RemoteScreenViewModel.ScreenRequest.ReleaseControl)
+                {
+                    _axRdpViewer.RequestControl(RDPCOMAPILib.CTRL_LEVEL.CTRL_LEVEL_VIEW );
+                    btnRemoteScreen.Content = "Request Control";
+                }
+            }
+        }
+        /***********************
+         * 
+         * ***********************/
+        private void btnScale_Click(object sender, RoutedEventArgs e)
+        {
+            //toggle it
+            _bScaleAxRDPScreen = (_bScaleAxRDPScreen == true) ? false : true;
+            _axRdpViewer.SmartSizing = (_bScaleAxRDPScreen == true) ? true : false;
+        }
+    }
+}

@@ -1,0 +1,207 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ServiceModel;
+using System.Security.Cryptography;
+using p2p.encrypt;
+using p2p.dns;
+using MingleView.Properties;
+using MingleView;
+using System.Security.Cryptography.X509Certificates;
+namespace  p2p.mesh
+{
+    /*******************
+     * first generic is the interface supoorted by the service
+     * second the service instance
+     * **************/
+    class P2PMesh<T, U> where T : IClientChannel
+    {
+        private const string MESH_RELATIVE_PATH = "MingleView/meeting";
+        private const int MESH_PASSWORD_SIZE = 256;
+        ChannelFactory<T> _channelFactory=null;
+        T _meshChannel = default(T);
+        InstanceContext _instanceContext=null;
+        private P2PResolver  _p2pCustomResolver = new P2PResolver();
+        P2PDNS _p2pDNS = new P2PDNS();
+        string MINGLE_SELF_SIGN_CERT_PATH = "\\crowsoft\\mingleview\\Assembly\\Mingle.pfx";
+        string MINGLE_CERT_PASSWORD = "mingle";
+        #region Properties
+        public T MeshChannel { get { return _meshChannel; } }
+        public string MeshID { get; set; }
+        public T CallbackChannel
+        {
+            get
+            {
+                return OperationContext.Current.GetCallbackChannel<T>();
+            }
+        }
+        #endregion      
+
+        /************************
+         * creates a mesh & gives a unique ID of the mesh
+         * throws mingleview exception on error
+         * ***********************/
+        public void Start(U sourceObject)
+        {
+            RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
+            byte[] randomPassword = new byte[MESH_PASSWORD_SIZE];
+            P2PMeshInfo meshInfo = new P2PMeshInfo();
+            p2psecureID secureID = new p2psecureID();
+            string sMeetingID, sp2pDNSname;
+            byte[] byEncryptedMeshInfo = { 0 };
+
+            Logger.Trace(Logger.MessageType.Informational, "P2PMesh::Start "); 
+            //create a random password
+            rngCsp.GetBytes(randomPassword);
+            meshInfo.MeshPassword = BitConverter.ToString(randomPassword);
+
+            _p2pDNS.Init(); 
+            //intialise a custom resolver service on p2psecureid ipv6 address
+            _p2pCustomResolver.Start (_p2pDNS.GlobalIPV6Address);
+            meshInfo.CustomResolverURI = _p2pCustomResolver.ResolverURI;
+
+            //mesh start
+            meshInfo.MeshURI = initMesh(sourceObject, GetUniqueMeshURI(), _p2pCustomResolver.LoopBackURI, meshInfo.MeshPassword);
+
+            //register p2pid & pass the URi,wcf password in data field
+            secureID.GenerateID(meshInfo.Serialize(), out sMeetingID, ref byEncryptedMeshInfo, out sp2pDNSname);
+            //register a dns name with the encrypted payload
+            _p2pDNS.RegisterDNS(sp2pDNSname, byEncryptedMeshInfo);
+
+            //join the mesh
+            MeshID = sMeetingID; 
+        }
+        /********************
+         * join does reverse of create
+         * throws mingleview exception
+         * ********************/
+        public void JoinMesh(U sourceObject,string sMeshID)
+        {
+            p2psecureID secureID = new p2psecureID();
+            byte[] byEncryptedMeshInfo = { 0 };
+            P2PMeshInfo meshInfo;
+
+            Logger.Trace(Logger.MessageType.Informational, "P2PMesh::JoinMesh ");
+
+            _p2pDNS.Init();
+
+            //resolve to get connection values
+            byEncryptedMeshInfo = _p2pDNS.ResolveDNS(secureID.GetUniqueName(sMeshID));
+
+            //decrypt the mesh info & form the object
+            meshInfo = P2PMeshInfo.DeSerialize(secureID.DecryptP2PData(byEncryptedMeshInfo, sMeshID));
+
+            //join the mesh
+            initMesh(sourceObject,meshInfo.MeshURI, meshInfo.CustomResolverURI, meshInfo.MeshPassword);
+
+            //assign it
+            MeshID = sMeshID;
+        }
+        /***************************
+         * release all the resources
+         * ***********************/
+        public void Close()
+        {
+            bool bFaulted = false;
+            if (_meshChannel != null)
+            {
+                bFaulted = (_meshChannel.State == CommunicationState.Faulted); 
+                if (_meshChannel.State == CommunicationState.Opened)
+                {
+                    _meshChannel.Close();
+                    _meshChannel.Dispose();
+                }
+                _meshChannel = default(T);
+            }
+            if (_channelFactory !=  null)
+            {
+                if (bFaulted == false )
+                                  _channelFactory.Close();
+                _channelFactory = null;
+            }
+            if (_instanceContext != null)
+            {
+                _instanceContext.Close();
+                _instanceContext = null;
+            }
+            _p2pCustomResolver.Stop(); 
+
+        }
+        /************
+         * returns a uinque mesh uri
+        * **********/
+        public string GetUniqueMeshURI()
+        {
+            return "net.p2p://" + Guid.NewGuid().ToString() + "/" + MESH_RELATIVE_PATH;
+        }
+
+
+        /************************************
+         * helper to join the mesh
+         * throws mingleview exception
+         ************************************/
+        private string initMesh(U sourceObject,string sMeshURI, string customResolverURI, string sMeshPassword)
+        {
+            NetPeerTcpBinding MeshBinding = new NetPeerTcpBinding();
+            NetTcpBinding ResolverBinding = new NetTcpBinding();
+            X509Certificate2 peerSSLCert = new X509Certificate2(
+                                    Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + MINGLE_SELF_SIGN_CERT_PATH,
+                                    MINGLE_CERT_PASSWORD); 
+
+            //encryption related
+            MeshBinding.Security.Mode  = SecurityMode.Transport ;
+            MeshBinding.Security.Transport.CredentialType = PeerTransportCredentialType.Password;
+
+            //resolver security
+            ResolverBinding.Security.Mode = SecurityMode.None ;
+              
+            //set the resolver properties
+            MeshBinding.Resolver.Mode = System.ServiceModel.PeerResolvers.PeerResolverMode.Custom;
+            MeshBinding.Resolver.Custom.Address = new EndpointAddress(new Uri(customResolverURI));
+             
+            MeshBinding.Resolver.Custom.Binding = ResolverBinding;
+            // Construct InstanceContext to handle messages on callback interface. 
+            // An instance of service object is created and passed to the InstanceContext.
+            _instanceContext = new InstanceContext(sourceObject);
+
+
+            // Each participant opens a duplex channel to the mesh
+            // participant is an instance of the chat application that has opened a channel to the mesh
+            _channelFactory = new DuplexChannelFactory<T>(
+                _instanceContext, MeshBinding, sMeshURI);
+               
+            //set the credentials for the mesh used by binding security
+            _channelFactory.Credentials.Peer.MeshPassword = sMeshPassword;
+            _channelFactory.Credentials.Peer.Certificate = peerSSLCert;
+
+             
+
+            _meshChannel = (T)_channelFactory.CreateChannel();
+            P2PMessagePropagationFilter msgtraceFilter = new P2PMessagePropagationFilter();
+
+            PeerNode peerNode = ((IClientChannel)_meshChannel).GetProperty<PeerNode>();
+            peerNode.MessagePropagationFilter = msgtraceFilter;
+            try
+            {
+                _meshChannel.Open();
+            }
+   
+            catch (CommunicationException ce)
+            {
+                Close();//close all mesh objects
+                Logger.Trace(Logger.MessageType.Failure, "P2PMesh::initMesh " + ce.Message + "." + ce.InnerException.Message);
+                throw new MingleViewException(Strings.P2PMesh_Mesh_OpenErrorMsg + ce.Message + "." + ce.InnerException.Message);
+            }
+            catch (TimeoutException te)
+            {
+                Close();//close all mesh objects
+                Logger.Trace(Logger.MessageType.Failure, "P2PMesh::initMesh TimeoutException " + te.Message + "." + te.InnerException.Message);
+                throw new MingleViewException(Strings.P2PMesh_Mesh_OpenErrorMsg + te.Message + "." + te.InnerException.Message);
+            }
+            return sMeshURI;
+        }
+
+
+    }
+}

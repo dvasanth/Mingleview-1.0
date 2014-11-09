@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="MingleView.UI.View.QuickStartMeeting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    FocusManager.FocusedElement ="{Binding ElementName=txtBoxParticipantName}"
+    Height="145" Width="296">
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
+    <Grid Height="141" Width="292">
+        <Label Height="28" Margin="22,22,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103">Enter your name:</Label>
+        <TextBox Margin="30,55,36,0" Name="txtBoxParticipantName" VerticalAlignment="Top" Text="{Binding Path = ParticipantName, UpdateSourceTrigger=PropertyChanged}" TabIndex="0"></TextBox>
+        <Button Height="Auto" Margin="93,0,124,28" Name="btnMeetingStart" VerticalAlignment="Bottom" IsDefault="True" Command="{Binding Path=QuickStartCmd}" Focusable="False">Start</Button>
+        <Button Command="{Binding Path=QuickStartCancelCmd}" HorizontalAlignment="Right" Margin="0,0,36,28" Name="button1" VerticalAlignment="Bottom" Width="75" Focusable="False">Cancel</Button>
+    </Grid>
+</UserControl>

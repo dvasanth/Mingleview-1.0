@@ -1,0 +1,15 @@
+﻿<Application x:Class="MingleView.UI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Set default button skin -->
+                <ResourceDictionary Source="Shared\Button.xaml"/>
+                <!-- Set default menu skin -->
+                <ResourceDictionary Source="Shared\Menu.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

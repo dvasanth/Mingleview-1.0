@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="MingleView.UI.View.RemoteScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="Auto" Width="Auto">
+    <Grid Width="Auto" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="33*" />
+        </Grid.RowDefinitions>
+        <Grid Name="gridRDPHolder" Height="Auto" Width="Auto" ShowGridLines="False" Grid.Row="1" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="btnScale_Click"  Name="btnScale"  Visibility="Hidden" > Fit to screen </Button>
+            <Button Click="btnRequestReleaseControl_Click" Name="btnRequestReleaseControl"  Visibility="Hidden" >Request Control</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.exe.config
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.exe
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.pdb
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\AvalonDock.dll
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\chatwindow\ChatView.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\QuickLaunch\QuickLaunchView.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\RemoteScreen\RemoteScreenView.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\chatwindow\ChatView.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindow.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ParticipantView\ParticipantView.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\QuickLaunch\QuickLaunchView.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\RemoteScreen\RemoteScreenView.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\App.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI_MarkupCompile.cache
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI_MarkupCompile.lref
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindow.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindowResource.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ParticipantView\ParticipantView.baml
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.g.resources
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.Properties.Resources.resources
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.csproj.GenerateResource.Cache
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.exe
+C:\Documents and Settings\sasi\Desktop\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.pdb
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.exe.config
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.exe
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.pdb
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.exe
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\MingleViewUI.pdb
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\bin\Debug\AvalonDock.dll
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\chatwindow\ChatView.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ParticipantView\ParticipantView.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\QuickLaunch\QuickLaunchView.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\RemoteScreen\RemoteScreenView.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\chatwindow\ChatView.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindow.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\ParticipantView\ParticipantView.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\QuickLaunch\QuickLaunchView.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\RemoteScreen\RemoteScreenView.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\App.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI_MarkupCompile.cache
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI_MarkupCompile.lref
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindow.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MainWindow\MainWindowResource.baml
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.g.resources
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.Properties.Resources.resources
+E:\Code\MingleView\03-Dec-2010\MingleViewUI\obj\Debug\MingleViewUI.csproj.GenerateResource.Cache

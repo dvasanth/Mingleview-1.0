@@ -1,0 +1,181 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+using System.Runtime.Serialization;//include in refrence
+
+namespace MingleView.Model
+{
+    //decides the participant can share his screen
+    [Flags]
+    public enum SCREEN_PRESENT_LEVEL
+    {
+        NONE = 0,
+        DOCUEMENT,
+        APPLICATION,
+        SHARE_DESKTOP
+    }
+    //decides how much user can control a participant
+    [Flags]
+    public enum SCREEN_CTRL_LEVEL
+    {
+        NONE = 0x0,
+       VIEW,
+        CONTROL
+    }
+    //decides whether the user can change, edit, enumerate other participants privileges
+    [Flags]
+    public enum PRIVILEGE_CHANGE_LEVEL
+    {
+        NONE=0,
+        CHANGE_SCREEN_CTRL_LEVEL,
+        CHANGE_SCREEN_PRESENT_LEVEL
+    }
+    [DataContract]
+    [Serializable]
+    public class Participant : IEquatable<Participant>
+    {
+        
+        [DataMember]
+        public string Name //name of the participant used for display
+        { get; set; }
+       
+        [DataMember]
+        public string Id //unique id of the participant
+        {
+            get;
+            private set;
+        }
+
+        public Icon Icon //name of the participant used for display
+        { get; set; }
+        #region Participant privileges
+        [DataMember]
+        private SCREEN_CTRL_LEVEL _screenControlLevel;
+        [DataMember]
+        private SCREEN_PRESENT_LEVEL _screenPresentLevel;
+        [DataMember]
+        private PRIVILEGE_CHANGE_LEVEL _privilegeChangeLevel;
+
+        /************************
+         * describes the presenter levels
+         * **********************/
+        public SCREEN_PRESENT_LEVEL ScreenPresentLevel
+        {
+            get { return _screenPresentLevel; }
+            set { _screenPresentLevel = value; }
+        }
+
+        /*************
+         * describes abt how much the user can control the screen
+         * *************/
+        public SCREEN_CTRL_LEVEL ScreenControlLevel
+        {
+            get { return _screenControlLevel; }
+            set { _screenControlLevel = value; }
+        }
+        /*****************
+         * describes abt the privilege to the partipant to change other participants privilege
+         * ****************/
+        public PRIVILEGE_CHANGE_LEVEL PrivilegeChangeLevel
+        {
+            get { return _privilegeChangeLevel; }
+            set { _privilegeChangeLevel=value;}
+        }
+        #endregion
+
+        public Participant()
+        {
+        }
+        /********************
+         * set the default values for the particpants
+         * ********************/
+        public Participant(string sDisplayName)
+        {
+            //default paritipants can't view or control screens
+            _screenControlLevel = SCREEN_CTRL_LEVEL.VIEW;
+            //default participants can't share a screen
+            _screenPresentLevel = SCREEN_PRESENT_LEVEL.NONE;
+            //default participant don't have any access to change other particpant levels
+            _privilegeChangeLevel = PRIVILEGE_CHANGE_LEVEL.NONE; 
+            //set this to guid
+            Id = Guid.NewGuid().ToString()   ;
+            Name = sDisplayName;
+            
+            //Icon = Properties.Resources.online;
+        }
+        /*******
+         * 
+         * ****/
+        public Participant(Participant copy)
+        {
+            this._screenControlLevel = copy.ScreenControlLevel;
+            this._screenPresentLevel = copy.ScreenPresentLevel;
+            this._privilegeChangeLevel = copy.PrivilegeChangeLevel;
+            this.Id = copy.Id;
+            this.Name = copy.Name;
+            System.Diagnostics.Trace.WriteLine("Participant(Participant copy)");
+        }
+        /*********************
+         * check if presnter
+         * *********************/
+        public bool IsPresenter()
+        {
+            return (ScreenPresentLevel & SCREEN_PRESENT_LEVEL.SHARE_DESKTOP) == SCREEN_PRESENT_LEVEL.SHARE_DESKTOP;
+        }
+        /****************
+         * change to presenter
+         * **************/
+        public void ChangeToPresenter()
+        {
+            ScreenPresentLevel |= SCREEN_PRESENT_LEVEL.SHARE_DESKTOP;
+            ScreenControlLevel |= SCREEN_CTRL_LEVEL.VIEW;
+            PrivilegeChangeLevel |= PRIVILEGE_CHANGE_LEVEL.CHANGE_SCREEN_PRESENT_LEVEL;
+        }
+        /*****************
+         * Checks whether the participant can change the presenter
+         * **************/
+        public bool CanChangePresenter()
+        {
+            return (PrivilegeChangeLevel & PRIVILEGE_CHANGE_LEVEL.CHANGE_SCREEN_PRESENT_LEVEL) == PRIVILEGE_CHANGE_LEVEL.CHANGE_SCREEN_PRESENT_LEVEL;
+        }
+        /****************
+         * host settings
+         * ************/
+        public void ChangeToHost()
+        {
+            ScreenPresentLevel |= SCREEN_PRESENT_LEVEL.NONE;
+            ScreenControlLevel |= SCREEN_CTRL_LEVEL.CONTROL ;
+            PrivilegeChangeLevel |= PRIVILEGE_CHANGE_LEVEL.CHANGE_SCREEN_CTRL_LEVEL |
+                                    PRIVILEGE_CHANGE_LEVEL.CHANGE_SCREEN_PRESENT_LEVEL;
+
+        }
+        /*****************
+         * make it as a viewer
+         * ****************/
+        public void ChangeToViewer()
+        {
+            //participants can't share a screen
+            _screenPresentLevel ^= SCREEN_PRESENT_LEVEL.SHARE_DESKTOP;
+        }
+        /*************
+         * Just append the privileges with flags
+         * ********/
+        public static Participant operator +(Participant operand1, Participant operand2)
+        {
+            operand2._screenControlLevel |= operand1.ScreenControlLevel;
+            operand2._screenPresentLevel |= operand1.ScreenPresentLevel;
+            operand2._privilegeChangeLevel |= operand1.PrivilegeChangeLevel;
+            operand2.Id = operand1.Id;  
+            return operand2;
+        }
+        /*****************
+         *  equality
+         * ************/
+        public bool Equals(Participant other)
+        {
+            return Id.Equals(other.Id);
+        }
+    }
+}

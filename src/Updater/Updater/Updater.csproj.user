@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>http://farmanager.com/files/Far20b1807.x86.20110203.msi C:\Users\vasanth\Desktop\1.exe</StartArguments>
+  </PropertyGroup>
+</Project>

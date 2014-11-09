@@ -1,0 +1,165 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Input;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using MingleView.Service;
+using System.Windows.Threading;
+using MingleView.Model;
+using RDPCOMAPILib;
+namespace MingleView.UI.ViewModel
+{
+    public class QuickLaunchViewModel:MeetingWorkspaceViewModel
+    {
+        #region Fields
+        RelayCommand _ShareDesktopCmd;
+        readonly IMeetingManager _meetingManager;
+        private readonly Dispatcher _dispatcher;
+        protected RDPSession _comRdpSession = null;
+        private const string RDP_GROUP_NAME = "MingleViewGroup";
+        private const string RDP_AUTHORIZATION_NAME = "crow-soft-mingleview";
+        private const int RDP_MAX_USERS = 5;
+        #endregion //Fields
+
+        #region Constructor
+        public QuickLaunchViewModel(IMeetingManager meetingManager, Dispatcher dispatcher)
+        {
+            _meetingManager = meetingManager;
+            base.OnPropertyChanged("IsMeetingStarted");
+            _dispatcher = dispatcher; 
+            //events interested
+            _meetingManager.MeetingEvents.ParticipantUpdated += delegate(object sender, ParticipantEventArgs changeRgs)
+            {
+                this._dispatcher.Invoke(
+                    (Action)delegate { OnPatricipantLevelChange(changeRgs.ParticipantInfo); },
+                    null);
+            };
+            ShareDesktopText = Properties.Strings.QuickLaunchViewModel_Start_ShareDesktop_Button_Text;
+        }
+        #endregion //Constructor
+        #region meeting manager events
+        /****************
+         * participant access level is changed
+         * **********************/
+        void OnPatricipantLevelChange(Participant changedParticipant)
+        {
+            //check if somebody changed our level
+            if (this._meetingManager.Self == changedParticipant)
+            {
+                //update the ui
+                base.OnPropertyChanged("IsPresenter");
+            }
+        }
+        #endregion
+
+        #region Presentation Properties
+        public string MeetingID
+        {
+            get { return this._meetingManager.MeetingID; }
+            set { }
+        }
+        public string ShareDesktopText
+        {
+            get 
+            {
+                if (_comRdpSession != null)
+                    return Properties.Strings.QuickLaunchViewModel_Stop_ShareDesktop_Button_Text;
+                else
+                    return Properties.Strings.QuickLaunchViewModel_Start_ShareDesktop_Button_Text;
+            }
+            set { }
+        }
+        public bool IsPresenter
+        {
+            get
+            {
+                return (this._meetingManager.Self.ScreenPresentLevel & SCREEN_PRESENT_LEVEL.SHARE_DESKTOP) == SCREEN_PRESENT_LEVEL.SHARE_DESKTOP;
+            }
+            set
+            {
+              
+            }
+        }
+        public bool IsMeetingStarted
+        {
+            get 
+            {
+                if (_meetingManager == null)
+                    return false;
+                return true;
+            }
+        }
+        public ICommand ShareDesktopCmd
+        {
+            get
+            {
+                if (_ShareDesktopCmd == null)
+                {
+                    _ShareDesktopCmd = new RelayCommand(param => this.onShareDesktop());
+                }
+                return _ShareDesktopCmd;
+            }
+        }
+        #endregion //Presentation Properties
+        #region private hlprs
+
+        /*************************
+         * user shares his desktop to others
+         * ********************/
+        private void onShareDesktop()
+        {
+           //create rdp invitation & pass it to others
+            if (_comRdpSession != null)
+            {
+                _comRdpSession.Close();
+                 System.Runtime.InteropServices.Marshal.ReleaseComObject(_comRdpSession);
+                _comRdpSession = null;
+                 //Change button text
+                 base.OnPropertyChanged("ShareDesktopText");
+                 return;
+            }
+            string sRDPPassword = this._meetingManager.Self.Id;
+            _comRdpSession = new RDPSession();
+            _comRdpSession.OnAttendeeConnected += new _IRDPSessionEvents_OnAttendeeConnectedEventHandler(OnAttendeeConnected);
+            _comRdpSession.OnAttendeeDisconnected += new _IRDPSessionEvents_OnAttendeeDisconnectedEventHandler(OnAttendeeDisconnected);
+            _comRdpSession.OnControlLevelChangeRequest += new _IRDPSessionEvents_OnControlLevelChangeRequestEventHandler(OnControlLevelChangeRequest);
+            _comRdpSession.colordepth = 16;
+            _comRdpSession.Open();
+            
+            IRDPSRAPIInvitation invitation = _comRdpSession.Invitations.CreateInvitation(RDP_AUTHORIZATION_NAME, RDP_GROUP_NAME, sRDPPassword, RDP_MAX_USERS);
+            //request others to join
+            this._meetingManager.InformAll.AccessScreen(new RDInvitation(invitation.ConnectionString, this._meetingManager.Self,sRDPPassword));
+            //Change button text
+            base.OnPropertyChanged("ShareDesktopText");
+
+        }
+        #endregion //privatre hlprs   
+        #region RDP events notifiers
+        /****************
+         * attende levels changed
+         * ****************/
+        void OnControlLevelChangeRequest(object pObjAttendee, CTRL_LEVEL RequestedLevel)
+        {
+            IRDPSRAPIAttendee pAttendee = pObjAttendee as IRDPSRAPIAttendee;
+            pAttendee.ControlLevel = RequestedLevel;
+        }
+        /****************
+         * attended connected
+         * ****************/
+        private void OnAttendeeConnected(object pObjAttendee)
+        {
+            IRDPSRAPIAttendee pAttendee = pObjAttendee as IRDPSRAPIAttendee;
+            pAttendee.ControlLevel = CTRL_LEVEL.CTRL_LEVEL_INTERACTIVE;
+           
+        }
+        /****************
+         * disconnected
+         * *******************/
+        void OnAttendeeDisconnected(object pDisconnectInfo)
+        {
+            IRDPSRAPIAttendeeDisconnectInfo pDiscInfo = pDisconnectInfo as IRDPSRAPIAttendeeDisconnectInfo;
+        }
+        #endregion //rdp events notifiers
+    }
+}

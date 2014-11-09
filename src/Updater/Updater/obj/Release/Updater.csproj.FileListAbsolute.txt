@@ -1,0 +1,8 @@
+F:\mingleview\code\Updater\Updater\bin\Release\Updater.exe
+F:\mingleview\code\Updater\Updater\bin\Release\Updater.pdb
+F:\mingleview\code\Updater\Updater\obj\Release\ResolveAssemblyReference.cache
+F:\mingleview\code\Updater\Updater\obj\Release\Updater.DownloadProgress.resources
+F:\mingleview\code\Updater\Updater\obj\Release\Updater.Properties.Resources.resources
+F:\mingleview\code\Updater\Updater\obj\Release\Updater.csproj.GenerateResource.Cache
+F:\mingleview\code\Updater\Updater\obj\Release\Updater.exe
+F:\mingleview\code\Updater\Updater\obj\Release\Updater.pdb

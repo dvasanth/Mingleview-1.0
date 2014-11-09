@@ -1,0 +1,200 @@
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe.config
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\Interop.NetFwTypeLib.dll
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\Interop.RDPCOMAPILib.dll
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.ResolveComReference.cache
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\MingleView.pdb
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\AvalonDock.dll
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\Interop.NetFwTypeLib.dll
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\bin\Debug\Interop.RDPCOMAPILib.dll
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\App.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.cache
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.lref
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindowResource.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.g.resources
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Strings.resources
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.GenerateResource.Cache
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.exe
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.pdb
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.baml
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.g.cs
+E:\Code\MingleView\07-Jan-2011\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Resources.resources
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe.config
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\Interop.RDPCOMAPILib.dll
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.ResolveComReference.cache
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.exe
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.pdb
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\MingleView.pdb
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\AvalonDock.dll
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\Interop.RDPCOMAPILib.dll
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\bin\Debug\Interop.NetFwTypeLib.dll
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\App.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.cache
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.lref
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindowResource.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.g.resources
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Resources.resources
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Strings.resources
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.GenerateResource.Cache
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe.config
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\Interop.NetFwTypeLib.dll
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\Interop.RDPCOMAPILib.dll
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.ResolveComReference.cache
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Button.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\App.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\App.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.cache
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.lref
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\MingleView.pdb
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\AvalonDock.dll
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\Interop.NetFwTypeLib.dll
+F:\mingleview\code\MingleViewUI\MingleViewUI\bin\Debug\Interop.RDPCOMAPILib.dll
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindowResource.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.baml
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.g.resources
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Resources.resources
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Strings.resources
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.GenerateResource.Cache
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.exe
+F:\mingleview\code\MingleViewUI\MingleViewUI\obj\Debug\MingleView.pdb
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe.config
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\Interop.RDPCOMAPILib.dll
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.ResolveComReference.cache
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.exe
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.pdb
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.pdb
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\AvalonDock.dll
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\Interop.RDPCOMAPILib.dll
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Button.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\App.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\App.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.cache
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.lref
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindowResource.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.baml
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.g.resources
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Resources.resources
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Strings.resources
+C:\Users\Sasik\Documents\Google Talk Received Files\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.GenerateResource.Cache
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe.config
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\Interop.NetFwTypeLib.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\Interop.RDPCOMAPILib.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.ResolveComReference.cache
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.exe
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.pdb
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.exe
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\MingleView.pdb
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\AvalonDock.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\Interop.RDPCOMAPILib.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\Interop.NetFwTypeLib.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\ResolveAssemblyReference.cache
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Button.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\App.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\JoinMeeting\JoinMeetingView.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickLaunch\QuickLaunchView.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\QuickstartMeeting\QuickStartMeeting.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\RemoteScreen\RemoteScreenView.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Send Error Report\SendErrorReport.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\App.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.cache
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView_MarkupCompile.lref
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\chatwindow\ChatView.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindow.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\MainWindow\MainWindowResource.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\ParticipantView\ParticipantView.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.g.resources
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Resources.resources
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.Properties.Strings.resources
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\MingleView.csproj.GenerateResource.Cache
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\bin\Debug\Microsoft.Windows.Shell.dll
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Menu.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\About\About.baml
+E:\Code\MingleView\20-Feb-2011 New GUI\MingleViewUI\MingleViewUI\MingleViewUI\obj\Debug\UI\About\About.g.cs
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\About\About.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Button.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\Shared\Menu.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\App.baml
+C:\Users\vasanth\Desktop\MingleViewUI\MingleViewUI\obj\Debug\UI\About\About.g.cs
